@@ -1,10 +1,10 @@
                                                     Some Queries Examples
 
-										-- REQUEST 1 --
+-- REQUEST 1 --
             
 SELECT * FROM DIM_CUSTOMER WHERE CUSTOMER = 'Atliq Exclusive' AND REGION = 'APAC';
 
-										-- REQUEST 2 --
+-- REQUEST 2 --
                         
 WITH product_counts AS (
     SELECT 
@@ -22,11 +22,11 @@ SELECT
 FROM product_counts;
 
   
-										-- REQUEST 3 -- 
+-- REQUEST 3 -- 
 
 SELECT COUNT(DISTINCT PRODUCT) AS PRODUCTCOUNT,SEGMENT FROM DIM_PRODUCT GROUP BY SEGMENT ORDER BY PRODUCTCOUNT DESC;
 
-										-- Request 4 -- 
+-- Request 4 -- 
 
 SELECT 
 COUNT(
@@ -48,8 +48,7 @@ JOIN FACT_GROSS_PRICE AS FGP ON
 DP.PRODUCT_CODE = FGP.PRODUCT_CODE
 GROUP BY SEGMENT ORDER BY UNIQUE_2021 Asc,UNIQUE_2020 ASC LIMIT 1 ;
 
-
-										-- Request 5 --
+-- Request 5 --
 
 (SELECT DP.PRODUCT,FMC.PRODUCT_CODE,FMC.MANUFACTURING_COST FROM DIM_PRODUCT AS DP 
 JOIN 
